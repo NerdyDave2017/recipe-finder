@@ -12,10 +12,12 @@ export default function Home() {
   const { hits, loading } = useRecipeAPI();
 
   return (
-    <div className="w-full h-[calc(100vh-86px)] flex-col items-center justify-center space-y-6">
-      <Navbar />
-      <div className="w-full flex item-center justify-center">
-        <Search />
+    <div className="w-full h- flex-col items-center justify-center space-y-6 relative">
+      <div className="sticky top-0 bg-white">
+        <Navbar />
+        <div className="w-full flex item-center justify-center">
+          <Search />
+        </div>
       </div>
 
       <div className="w-full flex text-slate-700 font-light item-center justify-center">
@@ -24,7 +26,9 @@ export default function Home() {
 
           <div className="w-full auto flex justify-center items-center">
             {loading && (
-              <Spinner aria-label="Extra small spinner example" size="xl" />
+              <div className=" flex justify-center items-center">
+                <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#7ACA25]"></div>
+              </div>
             )}
 
             {!loading && hits.length == 0 && (
