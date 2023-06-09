@@ -7,7 +7,11 @@ type props = {
 
 const Card = ({ children, className }: props) => {
   return (
-    <div className="bg-[#f3f3f3] rounded-xl p-5 shadow-md shadow-[#ccc]">
+    <div
+      className={
+        "bg-[#f3f3f3] rounded-xl p-5 shadow-md shadow-[#ccc]" + " " + className
+      }
+    >
       {children}
     </div>
   );
