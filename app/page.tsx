@@ -6,8 +6,6 @@ import Navbar from "@/components/navbar";
 
 import { useRecipeAPI } from "@/hooks/useAPI";
 
-import { Spinner } from "flowbite-react";
-
 export default function Home() {
   const { hits, loading } = useRecipeAPI();
 
